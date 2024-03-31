@@ -1,6 +1,8 @@
 import 'package:crudprojeto/models/User.dart';
+import 'package:crudprojeto/provider/UsersProviders.dart';
 import 'package:crudprojeto/routes/AppRoutes.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class UserTile extends StatelessWidget {
   final User user;
@@ -29,7 +31,10 @@ class UserTile extends StatelessWidget {
                   color: Color.fromARGB(255, 143, 26, 163),
                 )),
             IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Provider.of<UsersProviders>(context, listen: false)
+                      .remove(user);
+                },
                 icon: const Icon(
                   Icons.delete,
                   color: Color.fromARGB(255, 185, 27, 16),

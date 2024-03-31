@@ -1,4 +1,4 @@
-import 'package:crudprojeto/Data/DummyUsers.dart';
+import 'package:crudprojeto/data/DummyUsers.dart';
 import 'package:crudprojeto/components/UserTile.dart';
 import 'package:crudprojeto/provider/UsersProviders.dart';
 import 'package:crudprojeto/routes/AppRoutes.dart';

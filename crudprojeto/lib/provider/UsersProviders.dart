@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:crudprojeto/Data/DummyUsers.dart';
+import 'package:crudprojeto/data/DummyUsers.dart';
 import 'package:crudprojeto/models/User.dart';
 import 'package:flutter/material.dart';
 
