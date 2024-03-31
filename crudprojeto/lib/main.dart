@@ -23,9 +23,9 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
             primarySwatch: Colors.blue,
             visualDensity: VisualDensity.adaptivePlatformDensity),
+        initialRoute: AppRouts.HOME,
         routes: {
-          AppRouts.HOME: (_) =>
-              UserList(), // -> rota home classe contadora e rotalist(usuarios adicionados)
+          AppRouts.HOME: (_) => UserList(),
           AppRouts.USER_FORM: (_) => UserForm(),
         },
       ),

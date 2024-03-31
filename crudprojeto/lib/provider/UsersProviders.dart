@@ -15,26 +15,23 @@ class UsersProviders with ChangeNotifier {
     return _itens.length;
   }
 
-  User byIdex(int i) {
+  User byIndex(int i) {
     return _itens.values.elementAt(i);
   }
 
   void put(User user) {
-    if (user == null) {
-      return;
-    }
-
     if (user.id != null && _itens.containsKey(user.id)) {
       _itens.update(
           user.id as String,
           (_) => User(
               name: user.name,
               cursoPeriodo: user.cursoPeriodo,
-              avatarUrl: user.avatarUrl));
+              avatarUrl: user.avatarUrl,
+              id: ''));
     } else {
       final id = Random().nextDouble().toString();
       _itens.putIfAbsent(
-          '1',
+          id,
           () => User(
               id: id,
               name: user.name,

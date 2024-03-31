@@ -16,7 +16,7 @@ class UserList extends StatelessWidget {
       ),
       body: ListView.builder(
           itemCount: user.count,
-          itemBuilder: (context, index) => UserTile(user.byIdex(index))),
+          itemBuilder: (context, index) => UserTile(user.all.elementAt(index))),
       bottomNavigationBar: BottomAppBar(
         child: Container(
           height: 50, // Altura do botão de adicionar
@@ -25,7 +25,8 @@ class UserList extends StatelessWidget {
             children: <Widget>[
               IconButton(
                 onPressed: () {
-                  Navigator.of(context).pushNamed(AppRouts.USER_FORM);
+                  Navigator.of(context)
+                      .pushNamed(AppRouts.USER_FORM, arguments: user);
                 },
                 icon: Icon(Icons.add),
                 color: Colors.black,

@@ -1,4 +1,4 @@
 class AppRouts {
-  static const HOME = '/';
+  static const HOME = '/home';
   static const USER_FORM = '/user-form';
 }
