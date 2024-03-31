@@ -32,8 +32,27 @@ class UserTile extends StatelessWidget {
                 )),
             IconButton(
                 onPressed: () {
-                  Provider.of<UsersProviders>(context, listen: false)
-                      .remove(user);
+                  showDialog(
+                      context: context,
+                      builder: (ctx) => AlertDialog(
+                            title: Text('Excluir Usuário'),
+                            content: Text('Tem certeza?'),
+                            actions: <Widget>[
+                              TextButton(
+                                  onPressed: () {
+                                    Navigator.of(context).pop();
+                                  },
+                                  child: Text('Não')),
+                              TextButton(
+                                  onPressed: () {
+                                    Provider.of<UsersProviders>(context,
+                                            listen: false)
+                                        .remove(user);
+                                    Navigator.of(context).pop();
+                                  },
+                                  child: Text('Sim'))
+                            ],
+                          ));
                 },
                 icon: const Icon(
                   Icons.delete,
