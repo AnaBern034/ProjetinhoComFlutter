@@ -7,28 +7,17 @@ class UserForm extends StatelessWidget {
   final _form = GlobalKey<FormState>();
   final _formData = Map<String, String>();
 
-  void _loadFormData(User user) {
-    if (user != null) {
-      _formData['id'] = user.id!;
-      _formData['name'] = user.name!;
-      _formData['cursoPeriodo'] = user.cursoPeriodo!;
-      _formData['avatarUrl'] = user.avatarUrl!;
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
-    final User user = ModalRoute.of(context)!.settings.arguments as User;
-    _loadFormData(user);
-
     return Scaffold(
       appBar: AppBar(
         title: Text('Formulario de usuario'),
         actions: <Widget>[
           IconButton(
+            icon: Icon(Icons.save),
+            color: Colors.black,
             onPressed: () {
               final isValid = _form.currentState!.validate();
-
               if (isValid) {
                 _form.currentState!.save();
                 Provider.of<UsersProviders>(context, listen: false).put(User(
@@ -39,8 +28,6 @@ class UserForm extends StatelessWidget {
                 Navigator.of(context).pop();
               }
             },
-            icon: Icon(Icons.save),
-            color: Colors.black,
           )
         ],
       ),

@@ -23,15 +23,6 @@ class UserTile extends StatelessWidget {
           child: Row(children: <Widget>[
             IconButton(
                 onPressed: () {
-                  Navigator.of(context)
-                      .pushNamed(AppRouts.USER_FORM, arguments: user);
-                },
-                icon: const Icon(
-                  Icons.edit,
-                  color: Color.fromARGB(255, 143, 26, 163),
-                )),
-            IconButton(
-                onPressed: () {
                   showDialog(
                       context: context,
                       builder: (ctx) => AlertDialog(

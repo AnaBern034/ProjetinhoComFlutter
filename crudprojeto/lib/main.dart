@@ -1,5 +1,6 @@
 import 'package:crudprojeto/provider/UsersProviders.dart';
 import 'package:crudprojeto/routes/AppRoutes.dart';
+import 'package:crudprojeto/views/UserCount.dart';
 import 'package:crudprojeto/views/UserForm.dart';
 import 'package:crudprojeto/views/UserList.dart';
 import 'package:flutter/material.dart';
@@ -25,8 +26,9 @@ class MyApp extends StatelessWidget {
             visualDensity: VisualDensity.adaptivePlatformDensity),
         initialRoute: AppRouts.HOME,
         routes: {
-          AppRouts.HOME: (_) => UserList(),
+          AppRouts.HOME: (_) => UserCount(),
           AppRouts.USER_FORM: (_) => UserForm(),
+          AppRouts.LIST_USERS: (_) => UserList(),
         },
       ),
     );

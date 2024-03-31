@@ -24,12 +24,12 @@ class UserList extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               IconButton(
-                onPressed: () {
-                  Navigator.of(context)
-                      .pushNamed(AppRouts.USER_FORM, arguments: user);
-                },
                 icon: Icon(Icons.add),
                 color: Colors.black,
+                onPressed: () {
+                  Navigator.of(context)
+                      .pushNamed(AppRouts.USER_FORM, arguments: user.all);
+                },
               ),
             ],
           ),

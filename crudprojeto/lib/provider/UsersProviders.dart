@@ -20,24 +20,14 @@ class UsersProviders with ChangeNotifier {
   }
 
   void put(User user) {
-    if (user.id != null && _itens.containsKey(user.id)) {
-      _itens.update(
-          user.id as String,
-          (_) => User(
-              name: user.name,
-              cursoPeriodo: user.cursoPeriodo,
-              avatarUrl: user.avatarUrl,
-              id: ''));
-    } else {
-      final id = Random().nextDouble().toString();
-      _itens.putIfAbsent(
-          id,
-          () => User(
-              id: id,
-              name: user.name,
-              cursoPeriodo: user.cursoPeriodo,
-              avatarUrl: user.avatarUrl));
-    }
+    final id = Random().nextDouble().toString();
+    _itens.putIfAbsent(
+        id,
+        () => User(
+            id: id,
+            name: user.name,
+            cursoPeriodo: user.cursoPeriodo,
+            avatarUrl: user.avatarUrl));
     notifyListeners();
   }
 
